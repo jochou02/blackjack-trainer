@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blackjack Trainer</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Script -->
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <button id="start">Start</button>
+    <main style="display: none;">
+      <section id="menu">
+        <label for="all-cards">All
+          <input type="radio" name="group1" id="all-cards" value="all" checked>
+          <span></span>
+        </label>
+        <label for="hard-totals">Hard Totals
+          <input type="radio" name="group1" id="hard-totals" value="hard">
+          <span></span>
+        </label>
+        <label for="soft-totals">Soft Totals
+          <input type="radio" name="group1" id="soft-totals" value="soft">
+          <span></span>
+        </label>
+        <label for="pairs">Pairs
+          <input type="radio" name="group1" id="pairs" value="pairs">
+          <span></span>
+        </label>
+        <label for="soft-totals-pairs">Soft Totals and Pairs
+          <input type="radio" name="group1" id="soft-totals-pairs" value="softpairs">
+          <span></span>
+        </label>
+      </section>
+      <section id="dealer">
+        <!-- Using aside to represent a card -->
+        <aside id="card1">A</aside>
+        <aside id="hidden"></aside>
+      </section>
+      <section id="player">
+        <aside id="card2">K</aside>
+        <aside id="card3">Q</aside>
+      </section>
+      <section id="scoreboard">
+        <p id="accuracy">Accuracy: 100%</p>
+        <p id="hands">0 of 0 hands</p>
+      </section>
+      <section id="decisions">
+        <button id="hit">Hit</button>
+        <button id="stand">Stand</button>
+        <button id="double">Double</button>
+        <button id="split">Split</button>
+        <button id="surrender">Surrender</button>
+        <button id="reset" style="display: none;">Reset</button>
+      </section>
+      <section id="result">
+        <p id="correct" style="display: none;">Correct!</p>
+        <p id="incorrect" style="display: none;">Correct play was double!</p>
+      </section>
+    </main>
+    <p id="version" style="display: none;">v 1.0.4</p>
+  </body>
+</html>

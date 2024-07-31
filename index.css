@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#start {
+    padding: 15px 100px;
+    font-size: 24px;
+    margin: 3px;
+    border-radius: 6px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+    background-color: white;
+    text-align: center;
+}
+
+#start:hover {
+    background-color: black;
+    color: white;
+}
+
+main {
+    background-color: rgb(66, 106, 82);
+    height: 600px;
+    width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+aside {
+    background-color: white;
+    height: 150px;
+    width: 100px;
+    border: 1px solid black; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    font-size: 50px;
+}
+
+aside#hidden {
+    background-color: black;
+}
+
+#menu {
+    color: white;
+    width: 300px;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+label span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+label:hover input ~ span {
+    background-color: #ccc;
+}
+
+label input:checked ~ span {
+    background-color: #2196F3;
+}
+
+label span:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+label input:checked ~ span:after {
+    display: block;
+}
+
+label span:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+#dealer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 300px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 50px;
+}
+
+#player {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 300px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+
+#scoreboard {
+    color: white;
+    width: 220px;
+    height: 100px;
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    font-size: 28px;
+    line-height: 35px;
+}
+
+#decisions {
+    width: 350px;
+    height: 130px;
+    position: absolute;
+    margin: auto;
+    bottom: 30px;
+    right: 30px;
+    text-align: right;
+}
+
+main button {
+    width: 140px;
+    padding: 8px;
+    font-size: 16px;
+    margin: 3px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+    background-color: white;
+}
+
+main button:hover {
+    background-color: #b9b9b9;
+}
+
+main button#reset {
+    background-color: red;
+    color: white;
+}
+
+#result {
+    width: 400px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+#result p {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 26px;
+    color: white;
+    padding: 30px;
+}
+
+#result #incorrect {
+    color: red;
+}
