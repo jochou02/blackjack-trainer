@@ -1,0 +1,119 @@
+body {
+    color: white;
+}
+
+h1 {
+    font-size: 45px;
+    margin: 45px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 22px;
+    padding: 20px;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+section {
+    width: 1000px;
+    padding: 30px;
+    background-color: var(--background-color-middle);
+    border: 1.5px solid var(--background-color-lighter);
+    border-radius: 3px;
+}
+
+#practice-drills div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+}
+
+#practice-drills aside {
+    background-color: var(--background-color-lighter);
+    height: 160px;
+    position: relative;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#practice-drills aside a {
+    color: white;
+    padding: 10px 0;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+    background-color: var(--green-button);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+}
+
+#practice-drills aside a:hover {
+    background-color: var(--green-button-hover);
+}
+
+#strategy-charts aside {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 15px;
+}
+
+#strategy-charts a {
+    color: white;
+    padding: 12px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+    background-color: var(--green-button);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+#strategy-charts a:hover {
+    background-color: var(--green-button-hover);
+}
+
+
+
+#version {
+    position: absolute;
+    bottom: 10px;
+}
+
+/*******
+// Hide content when screen is below 1100px
+*******/
+
+#width-error {
+    display: none;
+}
+
+@media (max-width: 1099px) {
+    div {
+        display: none; 
+    }
+    
+    #width-error {
+        display: block;
+    }
+}

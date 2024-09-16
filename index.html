@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blackjack Trainer</title>
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="index.css">
+    <title>Blackjack Training</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- Script -->
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
   </head>
   <body>
-    <button id="start">Start</button>
-    <main style="display: none;">
-      <section id="menu">
-        <label for="all-cards">All
-          <input type="radio" name="group1" id="all-cards" value="all" checked>
-          <span></span>
-        </label>
-        <label for="hard-totals">Hard Totals
-          <input type="radio" name="group1" id="hard-totals" value="hard">
-          <span></span>
-        </label>
-        <label for="soft-totals">Soft Totals
-          <input type="radio" name="group1" id="soft-totals" value="soft">
-          <span></span>
-        </label>
-        <label for="pairs">Pairs
-          <input type="radio" name="group1" id="pairs" value="pairs">
-          <span></span>
-        </label>
-        <label for="soft-totals-pairs">Soft Totals and Pairs
-          <input type="radio" name="group1" id="soft-totals-pairs" value="softpairs">
-          <span></span>
-        </label>
+    <div id="wrapper">
+      <h1>Blackjack Training Suite</h1>
+      <section id="practice-drills">
+        <h2>Practice Drills</h2>
+        <div>
+          <aside>
+            <h3>Basic Strategy<span style="color: red;"> BETA</span></h3>
+            <a href="basic-strategy.html">Start Drill</a>
+          </aside>
+          <aside>
+            <h3>Running Count</h3>
+            <a>Coming Soon!</a>
+          </aside>
+          <aside>
+            <h3>True Count</h3>
+            <a>Coming Soon!</a>
+          </aside>
+          <aside>
+            <h3>Deviations</h3>
+            <a>Coming Soon!</a>
+          </aside>
+        </div>
       </section>
-      <section id="dealer">
-        <!-- Using aside to represent a card -->
-        <aside id="card1">A</aside>
-        <aside id="hidden"></aside>
+
+      <section>
+        <h2>Test Out</h2>
+        <p>Coming soon!</p>
       </section>
-      <section id="player">
-        <aside id="card2">K</aside>
-        <aside id="card3">Q</aside>
+
+      <section id="strategy-charts">
+        <h2>Strategy Charts</h2>
+        <p>Coming soon!</p>
+        <aside>
+          <a>Basic Strategy</a>
+          <a>H17 Deviations</a>
+          <a>S17 Deviations</a>
+          <a>H17 Explanded</a>
+          <a>S17 Expanded</a>
+        </aside>
       </section>
-      <section id="scoreboard">
-        <p id="accuracy">Accuracy: 100%</p>
-        <p id="hands">0 of 0 hands</p>
+
+      <section>
+        <h2>View Training Stats</h2>
+        <p>Coming soon!</p>
       </section>
-      <section id="decisions">
-        <button id="hit">Hit</button>
-        <button id="stand">Stand</button>
-        <button id="double">Double</button>
-        <button id="split">Split</button>
-        <button id="surrender">Surrender</button>
-        <button id="reset" style="display: none;">Reset</button>
-      </section>
-      <section id="result">
-        <p id="correct" style="display: none;">Correct!</p>
-        <p id="incorrect" style="display: none;">Correct play was double!</p>
-      </section>
-    </main>
-    <p id="version" style="display: none;">v 1.0.4</p>
+
+  
+      <p id="version">v 2.0.1</p>
+    </div>
+    <p id="width-error">Screen size too small! Minimum screen width supported: 1100px</p>
   </body>
 </html>

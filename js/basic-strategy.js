@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.getElementById('start');
-    const version = document.getElementById('version');
-    const mainContent = document.querySelector('main');
     const resetButton = document.getElementById('reset');
     const hitButton = document.getElementById('hit');
     const standButton = document.getElementById('stand');
@@ -164,9 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startGame() {
-        startButton.style.display = 'none';
-        mainContent.style.display = 'block';
-        version.style.display = 'block';
         resetScoreboard();
         deal();
     }
@@ -259,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return hardDecision(convertToValue(playerCard1) + convertToValue(playerCard2), dealerCard);
     }
 
-    startButton.addEventListener('click', startGame);
     // resetButton.addEventListener('click', resetAndDeal);
 
     hitButton.addEventListener('click', () => checkAnswer('Hit'));
