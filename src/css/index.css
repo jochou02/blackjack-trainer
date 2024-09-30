@@ -95,11 +95,6 @@ section {
 
 
 
-#version {
-    position: absolute;
-    bottom: 10px;
-}
-
 /*******
 // Hide content when screen is below 1100px
 *******/

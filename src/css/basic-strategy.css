@@ -14,23 +14,6 @@ main {
     position: relative;
 }
 
-aside {
-    background-color: white;
-    height: 150px;
-    width: 100px;
-    border: 1px solid black; 
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center; 
-    font-size: 50px;
-}
-
-aside#hidden {
-    background-color: black;
-}
-
 #menu {
     color: white;
     width: 300px;
@@ -95,25 +78,25 @@ label span:after {
     background: white;
 }
 
+.card {
+    height: 150px;
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
 #dealer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
-    width: 300px;
-    position: absolute;
+    width: 200px;
+    position: relative;
     margin: auto;
-    left: 0;
-    right: 0;
     top: 50px;
 }
 
 #player {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    width: 300px;
+    width: 120px;
+    height: 150px;
     position: absolute;
     margin: auto;
     left: 0;
@@ -134,7 +117,6 @@ label span:after {
 
 #decisions {
     width: 350px;
-    height: 130px;
     position: absolute;
     margin: auto;
     bottom: 30px;
@@ -143,10 +125,11 @@ label span:after {
 }
 
 main button {
-    width: 140px;
+    width: 130px;
+    height: 45px;
     padding: 8px;
-    font-size: 16px;
-    margin: 3px;
+    font-size: 20px;
+    margin: 5px;
     border-radius: 6px;
     border: none;
     cursor: pointer;

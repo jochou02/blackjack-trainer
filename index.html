@@ -3,10 +3,11 @@
   <head>
     <title>Blackjack Training</title>
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="src/css/global.css">
+    <link rel="stylesheet" href="src/css/index.css">
     <!-- Script -->
     <script src="js/index.js"></script>
+    <script type="module" src="js/models.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -15,20 +16,20 @@
         <h2>Practice Drills</h2>
         <div>
           <aside>
-            <h3>Basic Strategy<span style="color: red;"> BETA</span></h3>
+            <h3>Basic Strategy</h3>
             <a href="basic-strategy.html">Start Drill</a>
           </aside>
           <aside>
             <h3>Running Count</h3>
-            <a>Coming Soon!</a>
+            <a style="background-color: grey;">Coming Soon!</a>
           </aside>
           <aside>
             <h3>True Count</h3>
-            <a>Coming Soon!</a>
+            <a style="background-color: grey;">Coming Soon!</a>
           </aside>
           <aside>
             <h3>Deviations</h3>
-            <a>Coming Soon!</a>
+            <a style="background-color: grey;">Coming Soon!</a>
           </aside>
         </div>
       </section>
@@ -50,13 +51,11 @@
         </aside>
       </section>
 
-      <section>
+      <section style="margin-bottom: 100px;">
         <h2>View Training Stats</h2>
         <p>Coming soon!</p>
       </section>
 
-  
-      <p id="version">v 2.0.1</p>
     </div>
     <p id="width-error">Screen size too small! Minimum screen width supported: 1100px</p>
   </body>
