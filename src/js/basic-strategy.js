@@ -181,9 +181,12 @@ document.addEventListener('DOMContentLoaded', () => {
             playerHand = [getRandomCard(), getRandomCard()];
         }
 
+        // Calculate player hand value to reuse below
+        let playerValue = calculateHandValue(playerHand);
+
         // Redeal if player gets a 20 or 21
         // 20s are too common and are not worth practicing
-        if (calculateHandValue(playerHand)['totalValue'] >= 20) {
+        if (playerValue['totalValue'] >= 20) {
             deal();
         }
 
@@ -192,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // If the option for any arbitrary hand is to HIT, simulate the hit a certain percent of the time
         // to test the decision after a third card has been dealt
-        let playerValue = calculateHandValue(playerHand);
         if (playerValue['isSoft'] || playerValue['totalValue'] < 10) {
             // Tweak this percentage to set what percent of the time a third card is dealt in this drill
             if (Math.random() < 0.5 && basicStrategy(playerHand, dealerCard) == options.HIT) {
@@ -206,12 +208,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkAnswer(playerChoice) {
         const correctChoice = basicStrategy(playerHand, dealerCard);
+        let timeOut;
         if (playerChoice === correctChoice) {
-            correctMessage.style.display = 'block';
+            // correctMessage.style.display = 'block';
             correctAnswers++;
+            timeOut = 100;
         } else {
             incorrectMessage.textContent = `Correct play was ${correctChoice}!`;
             incorrectMessage.style.display = 'block';
+            timeOut = 2000;
         }
         setTimeout(() => {
             incorrectMessage.style.display = 'none';
@@ -219,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalHands++;
             updateScoreboard();
             deal();
-        }, 500); 
+        }, timeOut); 
     }
 
     hitButton.addEventListener('click', () => checkAnswer(options.HIT));

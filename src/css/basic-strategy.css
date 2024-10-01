@@ -6,11 +6,36 @@ body {
     align-items: center;
 }
 
+h1 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.module {
+    border: 0.5px solid black;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.module h2 {
+    font-size: 22px;
+    text-align: center;
+    margin: 14px auto;
+    font-weight: 500;
+}
+
+.module hr {
+    width: 80%;
+    margin: auto;
+    border: none;
+    height: 1px;
+    background-color: grey;
+}
+
 main {
     background-color: var(--felt-color);
     height: 600px;
     width: 1000px;
-    margin: auto;
     position: relative;
 }
 
@@ -22,7 +47,7 @@ main {
     top: 30px;
 }
 
-label {
+#menu label {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -35,13 +60,13 @@ label {
     user-select: none;
 }
 
-label input {
+#menu label input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
 
-label span {
+#menu label span {
     position: absolute;
     top: 0;
     left: 0;
@@ -51,31 +76,55 @@ label span {
     border-radius: 50%;
 }
 
-label:hover input ~ span {
+#menu label:hover input ~ span {
     background-color: #ccc;
 }
 
-label input:checked ~ span {
+#menu label input:checked ~ span {
     background-color: #2196F3;
 }
 
-label span:after {
+#menu label span:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-label input:checked ~ span:after {
+#menu label input:checked ~ span:after {
     display: block;
 }
 
-label span:after {
+#menu label span:after {
     top: 9px;
     left: 9px;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: white;
+}
+
+#settings {
+    color: white;
+    width: 300px;
+    position: absolute;
+    left: 30px;
+    top: 370px;
+}
+
+#settings label {
+    cursor: pointer;
+    font-size: 22px;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 20px 0;
+}
+
+#settings label input {
+    cursor: pointer;
+    transform: scale(1.5);
 }
 
 .card {
@@ -105,13 +154,17 @@ label span:after {
 }
 
 #scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     color: white;
-    width: 220px;
-    height: 100px;
+    width: 210px;
+    height: 90px;
     position: absolute;
     right: 30px;
-    top: 40px;
-    font-size: 28px;
+    top: 30px;
+    font-size: 22px;
     line-height: 35px;
 }
 
@@ -134,20 +187,16 @@ main button {
     border: none;
     cursor: pointer;
     transition: background-color 0.2s ease; 
-    background-color: white;
+    background-color: #dfdfdf;
 }
 
 main button:hover {
-    background-color: #b9b9b9;
-}
-
-main button#reset {
-    background-color: red;
-    color: white;
+    background-color: white;
+    border: 1.5px solid black;
 }
 
 #result {
-    width: 400px;
+    width: 320px;
     height: 80px;
     display: flex;
     flex-direction: column;
@@ -163,13 +212,19 @@ main button#reset {
 
 #result p {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 26px;
     color: white;
     padding: 30px;
+    font-weight: 700;
 }
 
 #result #incorrect {
-    color: red;
+    color: rgb(255, 0, 0);
+}
+
+h3 {
+    color: white;
+    font-weight: 300;
 }
 

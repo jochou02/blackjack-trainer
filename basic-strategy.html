@@ -9,8 +9,11 @@
     <script type="module" src="src/js/basic-strategy.js"></script>
   </head>
   <body>
+    <h1>Basic Strategy Practice</h1>
     <main>
-      <section id="menu">
+      <section class="module" id="menu">
+        <h2>Select hand types</h2>
+        <hr>
         <label for="all-cards">All
           <input type="radio" name="group1" id="all-cards" value="all" checked>
           <span></span>
@@ -32,13 +35,26 @@
           <span></span>
         </label>
       </section>
-      <section id="dealer">
 
-      </section>
-      <section id="player">
+      <!-- <section class="module" id="settings">
+        <h2>Configure settings</h2>
+        <hr>
+        <label class="custom-checkbox">
+          <input type="checkbox" id="suppress" name="suppress" checked>
+          <span class="checkbox"></span>
+          Suppress feedback when correct
+        </label><br>
+        <label class="custom-checkbox">
+          <input type="checkbox" id="hard17" name="hard17">
+          <span class="checkbox"></span>
+          Include hard 17+
+        </label><br>
+      </section>       -->
 
-      </section>
-      <section id="scoreboard">
+      <section id="dealer"></section>
+      <section id="player"></section>
+
+      <section class="module" id="scoreboard">
         <p id="accuracy">Accuracy: 100%</p>
         <p id="hands">0 of 0 hands</p>
       </section>
@@ -54,5 +70,6 @@
         <p id="incorrect" style="display: none;">Correct play was double!</p>
       </section>
     </main>
+    <!-- <h3>Note: Hard 17+ always stands. These hands are intentionally omitted from this drill as they don't provide much training value.</h3> -->
   </body>
 </html>
