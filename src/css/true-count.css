@@ -35,15 +35,32 @@ h1 {
 main {
     background-color: var(--felt-color);
     height: var(--felt-height);
-    width: var(--felt-width);
+    width: 700px;
     position: relative;
+}
+
+#shoe {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 150px;
+}
+
+#shoe img {
+    width: 100%;
+    transition: transform 0.3s ease;
+    transform-origin: top left;
+}
+
+#shoe:hover img {
+    transform: scale(2);
 }
 
 #menu {
     color: white;
     width: 300px;
     position: absolute;
-    left: 30px;
+    right: 30px;
     top: 30px;
 }
 
@@ -103,86 +120,27 @@ main {
     background: white;
 }
 
-#settings {
-    color: white;
-    width: 300px;
+#info {
     position: absolute;
-    left: 30px;
-    top: 370px;
-}
-
-#settings label {
-    cursor: pointer;
-    font-size: 22px;
-    display: inline-block;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin: 20px 0;
-}
-
-#settings label input {
-    cursor: pointer;
-    transform: scale(1.5);
-}
-
-.card {
-    height: 150px;
-    position: absolute;
-    transition: transform 0.5s ease;
-}
-
-#dealer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 200px;
-    position: relative;
-    margin: auto;
-    top: 50px;
-}
-
-#player {
-    width: 120px;
-    height: 150px;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    bottom: 50px;
-}
-
-#scoreboard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    width: 210px;
-    height: 90px;
-    position: absolute;
-    right: 30px;
-    top: 30px;
-    font-size: 22px;
-    line-height: 35px;
-}
-
-#decisions {
-    width: 350px;
-    position: absolute;
-    margin: auto;
     bottom: 30px;
-    right: 30px;
-    text-align: right;
+    left: 30px;
+    width: 640px;
+    font-size: 22px;
+    color: white;
+    text-align: center;
 }
 
-main button {
-    width: 130px;
+#info p {
+    margin: 10px;
+    visibility: hidden;
+}
+
+#info button {
+    width: 180px;
     height: 45px;
     padding: 8px;
     font-size: 20px;
-    margin: 5px;
+    margin: 5px 5px 20px 5px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
@@ -190,41 +148,12 @@ main button {
     background-color: #dfdfdf;
 }
 
-main button:hover {
+#info button:hover {
     background-color: white;
     border: 1.5px solid black;
 }
 
-#result {
-    width: 320px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    text-align: center;
-}
 
-#result p {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: 26px;
-    color: white;
-    padding: 30px;
-    font-weight: 700;
-}
 
-#result #incorrect {
-    color: rgb(255, 0, 0);
-}
 
-h3 {
-    color: white;
-    font-weight: 300;
-}
 

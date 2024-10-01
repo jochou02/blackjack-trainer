@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>True Count</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/css/global.css">
+    <link rel="stylesheet" href="src/css/true-count.css">
+    <!-- Script -->
+    <script type="module" src="src/js/true-count.js"></script>
+  </head>
+  <body>
+    <h1>True Count Practice</h1>
+
+    <main>
+
+      <section class="module" id="menu">
+        <h2>Select number of decks</h2>
+        <hr>
+        <label for="2d">Double Deck
+          <input type="radio" name="group1" id="2d" value="2">
+          <span></span>
+        </label>
+        <label for="6d">6 Decks
+          <input type="radio" name="group1" id="6d" value="6" checked>
+          <span></span>
+        </label>
+        <label for="8d">8 Decks
+          <input type="radio" name="group1" id="8d" value="8">
+          <span></span>
+          </label>
+      </section>
+
+      <section class="module" id="info">
+        <h2 id="running-count">Running Count: 5</h2>
+        <hr>
+        <p id="cards-dealt">Cards Dealt: 50 / 312</p>
+        <p id="divisor">Deck Divisor: 5</p>
+        <p style="color: rgb(150, 255, 150);" id="true-count">True Count: 3</p>
+        <button id="show">Show True Count</button>
+        <button id="next">Next Shoe</button>
+      </section>
+
+      <section id="shoe">
+        <img id="shoe-img" src="https://dkf1anc6yv6k4.cloudfront.net/8D/1/D8_111.jpg">
+      </section>
+
+    </main>
+
+  </body>
+</html>

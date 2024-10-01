@@ -7,6 +7,9 @@
     --felt-color: rgb(66, 106, 82);
     --green-button: rgb(73, 171, 114);
     --green-button-hover: rgb(27, 122, 65);
+
+    --felt-height: 600px;
+    --felt-width: 1000px;
 }
 
 * {
