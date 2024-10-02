@@ -19,6 +19,10 @@ export class Card {
 
         return 0; // Indicates an invalid rank
     }
+
+    toString() {
+        return `${this.rank} of ${this.suit}`;
+    }
 }
 
 export class Shoe {

@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Redeal if player gets a 20 or 21
         // 20s are too common and are not worth practicing
         if (playerValue['totalValue'] >= 20) {
-            deal();
+            return deal();
         }
 
         // Generate dealer card
