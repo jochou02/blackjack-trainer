@@ -24,7 +24,7 @@ h1 {
     font-weight: 500;
 }
 
-.module hr {
+hr {
     width: 80%;
     margin: auto;
     border: none;
@@ -177,7 +177,7 @@ main {
     text-align: right;
 }
 
-main button {
+#decisions button {
     width: 130px;
     height: 45px;
     padding: 8px;
@@ -190,14 +190,14 @@ main button {
     background-color: #dfdfdf;
 }
 
-main button:hover {
+#decisions button:hover {
     background-color: white;
     border: 1.5px solid black;
 }
 
-#result {
-    width: 320px;
-    height: 80px;
+#feedback {
+    width: 480px;
+    height: 370px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -208,23 +208,56 @@ main button:hover {
     top: 0;
     bottom: 0;
     text-align: center;
+    background-color: var(--background-color-dark);
+    border-radius: 20px;
+    font-size: 28px;
+    color: white;
 }
 
-#result p {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: 26px;
-    color: white;
-    padding: 30px;
+#feedback i {
+    font-size: 60px;
+    margin: 60px 0 35px 0;
+}
+
+#feedback h3 {
+    font-weight: 400;
+}
+
+#feedback p {
+    font-weight: 100;
+}
+
+#feedback #wrong-choice {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#feedback #cards-recap {
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+#feedback #correct-choice {
+    font-size: 56px;
+    color: rgb(101, 195, 140);
     font-weight: 700;
 }
 
-#result #incorrect {
-    color: rgb(255, 0, 0);
+#feedback button {
+    margin: 20px auto 30px auto;
+    width: 90%;
+    height: 45px;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 6px;
+    border: 2px solid grey;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
 }
 
-h3 {
-    color: white;
-    font-weight: 300;
+#feedback button:hover {
+    border: 1.5px solid rgb(43, 43, 43);
+    background-color: grey;
 }
 

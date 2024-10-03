@@ -4,51 +4,57 @@ import { Card, calculateHandValue, basicStrategy} from './models.js';
 document.addEventListener('DOMContentLoaded', () => {
 
     /* -----------------------------------------
-        Buttons
+        Page Elements
     ----------------------------------------- */
+
+    // Decision buttons
     const hitButton = document.getElementById('hit');
     const standButton = document.getElementById('stand');
     const doubleButton = document.getElementById('double');
     const splitButton = document.getElementById('split');
     const surrenderButton = document.getElementById('surrender');
 
-    /* -----------------------------------------
-        Other Elements
-    ----------------------------------------- */
+    // Scoreboard elements
     const accuracyDisplay = document.getElementById('accuracy');
     const handsDisplay = document.getElementById('hands');
-    const correctMessage = document.getElementById('correct');
-    const incorrectMessage = document.getElementById('incorrect');
 
+    // Feedback elements
+    const feedback = document.getElementById('feedback');
+    const wrongChoice = document.getElementById('wrong-choice');
+    const cardsRecap = document.getElementById('cards-recap');
+    const correctChoice = document.getElementById('correct-choice');
+    const dismissButton = document.getElementById('dismiss');
+
+    // Global variables
     let correctAnswers = 0;
     let totalHands = 0;
-
-    // Global variables to store current hands
     let playerHand;
     let dealerCard;
 
     /* -----------------------------------------
-        Game Control
+        Manipulate Page Elements
     ----------------------------------------- */
-    function updateScoreboard() {
-        const accuracy = totalHands === 0 ? 0 : Math.round((correctAnswers / totalHands) * 100);
-        accuracyDisplay.textContent = `Accuracy: ${accuracy}%`;
-        handsDisplay.textContent = `${correctAnswers} of ${totalHands} hands`;
+
+    function showFeedback() {
+        feedback.style.display = "block";
     }
 
-    function resetScoreboard() {
-        correctAnswers = 0;
-        totalHands = 0;
-        updateScoreboard();
+    function hideFeedback() {
+        feedback.style.display = "none";
     }
 
-    function startGame() {
-        resetScoreboard();
-        deal();
+    const buttons = document.querySelectorAll('button');
+
+    function disableButtons(disable) {
+        buttons.forEach(button => {
+            if (button !== dismissButton) {
+                button.disabled = disable;
+            }
+        });
     }
 
     /* -----------------------------------------
-        Functions for Dealing
+        Dealing Functions
     ----------------------------------------- */
     function getCardImagePath(card) {
         const rank = card.rank.toString().toLowerCase();
@@ -154,10 +160,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return [card1, card2];
     }
     
-
     /* -----------------------------------------
-        Main Game Flow
+        Game Control Flow
     ----------------------------------------- */
+    function updateScoreboard() {
+        const accuracy = totalHands === 0 ? 0 : Math.round((correctAnswers / totalHands) * 100);
+        accuracyDisplay.textContent = `Accuracy: ${accuracy}%`;
+        handsDisplay.textContent = `${correctAnswers} of ${totalHands} hands`;
+    }
+
+    function resetScoreboard() {
+        correctAnswers = 0;
+        totalHands = 0;
+        updateScoreboard();
+    }
+
+    function startGame() {
+        resetScoreboard();
+        deal();
+    }
+
     function deal() {
         const selectedRadio = document.querySelector('input[name="group1"]:checked');
 
@@ -207,24 +229,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkAnswer(playerChoice) {
-        const correctChoice = basicStrategy(playerHand, dealerCard);
-        let timeOut;
-        if (playerChoice === correctChoice) {
-            // correctMessage.style.display = 'block';
+        const correctDecision = basicStrategy(playerHand, dealerCard);
+        if (playerChoice === correctDecision) {
             correctAnswers++;
-            timeOut = 100;
+            setTimeout(() => {
+                deal();
+            }, 100); 
         } else {
-            incorrectMessage.textContent = `Correct play was ${correctChoice}!`;
-            incorrectMessage.style.display = 'block';
-            timeOut = 2000;
+            let recapString = playerHand.map(card => card.rank).join(', ');
+            wrongChoice.innerHTML = `You chose: <span style="color: rgb(255, 61, 27); font-weight: 500;">${playerChoice}</span>`;
+            cardsRecap.innerHTML = `${recapString}&nbsp&nbspvs&nbsp&nbspDealer ${dealerCard.rank}`;
+            correctChoice.textContent = `${correctDecision}s`;
+            disableButtons(true);
+            showFeedback();
         }
-        setTimeout(() => {
-            incorrectMessage.style.display = 'none';
-            correctMessage.style.display = 'none';
-            totalHands++;
-            updateScoreboard();
-            deal();
-        }, timeOut); 
+        totalHands++;
+        updateScoreboard();
     }
 
     hitButton.addEventListener('click', () => checkAnswer(options.HIT));
@@ -233,6 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
     splitButton.addEventListener('click', () => checkAnswer(options.SPLIT));
     surrenderButton.addEventListener('click', () => checkAnswer(options.SURRENDER));
 
-    // Start the game! (Called on page load)
+    dismissButton.addEventListener('click', () => {
+        hideFeedback();
+        disableButtons(false);
+        deal();
+    });
+
+    // Start the game on page load
     startGame()
+
 });

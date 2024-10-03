@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/css/basic-strategy.css">
     <!-- Script -->
     <script type="module" src="src/js/basic-strategy.js"></script>
+    <script src="https://kit.fontawesome.com/698c813efd.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <h1>Basic Strategy Practice</h1>
@@ -65,11 +66,15 @@
         <button id="split">Split</button>
         <button id="surrender">Surrender</button>
       </section>
-      <section id="result">
-        <p id="correct" style="display: none;">Correct!</p>
-        <p id="incorrect" style="display: none;">Correct play was double!</p>
+      <section style="display: none;" id="feedback">
+        <i style="color: rgb(255, 61, 27);" class="fa-solid fa-circle-exclamation fa-2xl"></i>
+        <h3>Wrong Answer!</h3>
+        <p id="wrong-choice">You chose: <span style="color: rgb(255, 61, 27); font-weight: 500;">SPLIT</span></p>
+        <hr>
+        <p id="cards-recap">69&nbsp&nbspvs&nbsp&nbspDealer 10</p>
+        <p id="correct-choice">HIT</p>
+        <button id="dismiss">Dismiss</button>
       </section>
     </main>
-    <!-- <h3>Note: Hard 17+ always stands. These hands are intentionally omitted from this drill as they don't provide much training value.</h3> -->
   </body>
 </html>
