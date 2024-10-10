@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardImg = document.createElement('img');
             cardImg.classList.add('card');
             cardImg.src = getCardImagePath(card);
-            cardImg.alt = `Player Card ${index + 1}`;
+            cardImg.alt = `Card rank ${card.rank}`;
             cardImg.id = `player-card-${index + 1}`;
     
             // Add card initially from the side
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } 
         else if (selectedRadio.value == 'softpairs') {
             if (Math.random() < 0.5) {
-                playerHand = getRandomHard();
+                playerHand = getRandomPair();
             } else {
                 playerHand = getRandomSoft();
             }
